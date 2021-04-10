@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Users</title>
+        <link rel="stylesheet" href="{% static 'users/homepage_style.css' %}">
+    </head>
+    <body>
+        <h1>Linking Aadhar to better healthcare</h1>
+        <form action = "{% url 'signup' %}" method = GET>
+            <button type="submit" style="margin:5px;">Sign Up</button>
+        </form>
+        <form action = "{% url 'login' %}" method = GET>
+            <button type="submit" style="margin:5px;">Log In</button>
+        </form>
+    </body>
+</html>

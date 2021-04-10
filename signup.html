@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign Up</title>
+        <style>
+            input {
+                margin: 5px;
+            }
+
+            textarea {
+                margin: 5px;
+            }
+
+            fieldset {
+                display: inline-block;
+            }
+
+            label {
+                font-size: small;
+                margin: 5px;
+            }
+
+           #gender {
+                margin-bottom: 7px;
+                margin-left: 5px;
+                margin-right: 5px;
+                margin-top: 5px;
+           }
+        </style>
+    </head>
+    <body>
+        <h1 style="color: black; text-align: center;">Please enter your details below - </h1>
+        <form action = "{% url 'signup' %}" method = POST>
+            {% csrf_token %}
+                <h2 style="color: black; text-align: left;">Personal Details - </h2>
+                <fieldset>
+                    <input type="text" name="fname" placeholder="First Name"><br/>
+                    <input type="text" name="lname" placeholder="Last Name"><br/>
+                    <input type="number" name="aadhar_no" placeholder="Aadhar Card Number"><br/>
+                    <textarea name="address" placeholder="Address"></textarea><br/>
+                    <div>
+                        <input name = "gender" id = "gender" list = "Genders" placeholder = "Gender">
+                        <datalist id = "Genders">
+                            <option value = "Male">
+                            <option value = "Female">
+                            <option value = "Other">
+                    </div>
+                    <label for="birth_date">Date of birth - </label><br/>
+                    <input type="date" id = "birth_date" name="dob" placeholder="DD/MM/YYYY"><br/>
+                    <input type="number" name = "mediclaim" placeholder = "Mediclaim Number">
+                </fieldset>
+                <h2 style="color: black; text-align: left;">Phone and Email - </h2>
+                <fieldset>
+                    <input type="tel" name="phone_number" placeholder="Phone Number"><br/>
+                    <input type="email" name="email" placeholder="Email" />
+                </fieldset>
+                <h2 style="color: black; text-align: left;">Username and Password - </h2>
+                <fieldset>
+                    <input type = "text" name = "username" placeholder = "Username"><br/>
+                    <input type="password" name="user_password" placeholder="Password"><br/>
+                </fieldset><br/>
+                <input type="submit">
+        </form>
+    </body>
+</html>
